@@ -23,23 +23,17 @@ class DatabaseSeeder extends Seeder
 
        
 
-        foreach($categories as $category){
-            Category::created([
-                'nameCategory' => $category,
+        foreach($categories as $x){
+            Category::create([
+                'nameCategory' => $x,
             ]);
         }
 
-        \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
-        // ]);
-
-        // \App\Models\Caterory::factory()->create([
-        //     'nameCategory' => 'cliente',
-        //     'nameCategory' => 'proovedor',
-        //     'nameCategory' => 'funcionario interno',
         // ]);
     }
 }

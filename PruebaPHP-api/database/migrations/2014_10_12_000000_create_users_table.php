@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('country');
             $table->string('address');
-            $table->integer('phone');
+            $table->string('phone');
             $table->foreignID('category')->constrained('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

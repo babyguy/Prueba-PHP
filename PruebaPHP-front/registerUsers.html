@@ -55,9 +55,58 @@
       </nav>
     </header>
 
-    <body>
+    <body >
      <!-- body -->
-    
+
+    <div class="container ">
+      <h3 class="mb-3 mt-3" > Registro</h3>
+      <form action="">
+        <div class="mb-3 mt-3 d-flex gap-3">
+          <div class="d-flex flex-column gap-2">
+             <div>
+               <label for="name" class="form-label" >Nombre</label>
+               <input type="text" class="form-control" id="name" placeholder="Nombre" >
+             </div>
+             <div>
+               <label for="lastname" class="form-label">Apellido</label>
+               <input type="text" class="form-control" id="lastname" placeholder="Apellido">
+             </div>
+             <div>
+               <label for="cc" class="form-label">Cedula</label>
+               <input type="text" class="form-control" id="cc" placeholder="Cedula/Nit">
+             </div>
+             <div>
+               <label for="email" class="form-label">Correo</label>
+               <input type="email" class="form-control" id="email" placeholder="Ingresa tu coreo">
+             </div>
+          </div>
+          <div class="d-flex flex-column gap-2 ">
+             <div>
+               <label for="country" class="form-label">Pais</label>
+               <select class="form-select" id="country">
+                 <option selected>selecciona un pais</option>
+               </select>
+             </div>
+             <div>
+               <label for="address" class="form-label">Direccion</label>
+               <input type="text" class="form-control" id="address" placeholder="Direccion">
+             </div>
+             <div>
+               <label for="phone" class="form-label">Celular</label>
+               <input type="tel" class="form-control" id="phone" placeholder="Celular">
+             </div>
+             <div >
+               <label for="category" class="form-label">Categoria</label>
+               <select class="form-select" id="category">
+                 <option selected>selecciona una categoria</option>
+               </select>
+             </div>
+          </div>
+        </div>  
+        <button class="btn btn-outline-danger" type="submit">Enviar</button>
+      </form>
+    </div>
+      
    </body>
   
     <!-- bootstrap-js -->

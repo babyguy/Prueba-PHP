@@ -5,6 +5,8 @@ const countries = [];
 const categories = ["cliente", "proovedor", "funcionario interno"];
 const userCount = document.getElementById("userCount");
 const userTable = document.getElementById("userTable-tbody");
+const selectCategory = document.getElementById("category");
+const selectCountry= document.getElementById("country");
 
 // --------------apis--------------
 const userList = "http://127.0.0.1:8000/api/index";
@@ -129,17 +131,49 @@ function delete_user(id, e) {
     });
 }
 
+
+
+
 // list countries
+
 function list_countries() {
   fetch(getCountries)
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((element) => {
-        countries.push(element.name.common);
-      });
-      console.log(countries.sort());
-    })
-    .catch((error) => {
-      console.error(error);
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((element) => {
+      countries.push(element.name.common);
     });
+    localStorage.setItem('countries', countries);
+    // console.log(countries.sort());
+    console.log(localStorage.getItem('countries'));
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
 }
+
+
+function charge_selects() {
+
+  for (const x in categories) {
+    selectCategory.innerHTML +=`
+    <option value="${x+1}">${categories[x]}</option>
+   `
+  }
+  
+  let objetoGuardado = localStorage.getItem("countries");
+  let miObjeto = [];
+  miObjeto.push(objetoGuardado)
+    console.log(miObjeto);
+
+  for (const x in country) {
+    console.log(country.sort());
+    selectCountry.innerHTML +=`
+    <option value="${x+1}">${country[x]}</option>
+   `
+  }
+
+}
+list_countries(); 
+charge_selects();

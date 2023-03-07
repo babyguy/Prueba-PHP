@@ -1,7 +1,6 @@
 // --------------variables--------------
 let userID;
 const users = [];
-const countries = [];
 const categories = ["cliente", "proovedor", "funcionario interno"];
 const userCount = document.getElementById("userCount");
 const userTable = document.getElementById("userTable-tbody");
@@ -137,20 +136,27 @@ function delete_user(id, e) {
 // list countries
 
 function list_countries() {
+const countries = [];
   fetch(getCountries)
   .then((response) => response.json())
   .then((data) => {
     data.forEach((element) => {
       countries.push(element.name.common);
+      console.log(element.name.common);
     });
-    localStorage.setItem('countries', countries);
-    // console.log(countries.sort());
-    console.log(localStorage.getItem('countries'));
   })
   .catch((error) => {
     console.error(error);
   });
-
+  
+  console.log(countries);
+  
+  for (const x in countries) {
+    console.log(countries);
+    selectCountry.innerHTML +=`
+    <option value="${x+1}">${countries[x]}</option>
+   `
+  }
 }
 
 
@@ -162,18 +168,12 @@ function charge_selects() {
    `
   }
   
-  let objetoGuardado = localStorage.getItem("countries");
-  let miObjeto = [];
-  miObjeto.push(objetoGuardado)
-    console.log(miObjeto);
+    console.log(countries);
 
-  for (const x in country) {
-    console.log(country.sort());
-    selectCountry.innerHTML +=`
-    <option value="${x+1}">${country[x]}</option>
-   `
-  }
+ 
 
 }
 list_countries(); 
 charge_selects();
+
+

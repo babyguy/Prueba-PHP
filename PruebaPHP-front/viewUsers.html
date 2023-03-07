@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap-icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- my-css -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body onload="list_users()">
+    <header >
+      <!-- barra de navegacion  -->
+      <nav class="navbar navbar-dark bg-danger -3">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-md">
+            <!-- bnotton  sanw-->
+            <button
+              Class="navbar-toggler bg-white"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarToggleExternalContent "
+            >
+              <span class="navbar-toggler-icon" ></span>
+            </button>
+
+            <div class="container-fluid">
+              <!-- nav -->
+              <div
+                class="collapse navbar-collapse "
+                id="navbarToggleExternalContent"
+              >
+                <div class="navbar-nav ">
+                  <a class="nav-link text-white" href="./index.html">Inicio</a>
+                  <a class="nav-link text-white" href="./viewUsers.html">Ver Usuarios</a>
+                  <a class="nav-link text-white" href="./registerUsers.html">Registrar</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    <body onload="list_users()">
+     <!-- body -->
+    <div class="container  p-5  " id="bodyHome">
+      <!-- search -->
+        <form class="d-flex m-2" role="search">
+            <input class="form-control me-2 text-danger  border-danger  " type="search" placeholder="Search" aria-label="Search" id="search">
+            <button class="btn btn-outline-danger type="submit">Search</button>
+          </form>
+
+        <div class="container d-flex  w-100">
+          
+          <table class="table text-center " id="userTable">
+            <thead >
+              <tr class="bg-danger text-white">
+                <th scope="col">#</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Email</th>
+                <th scope="col">Pais</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Celular</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="userTable-tbody">
+              
+            </tbody>
+          </table>
+        </div>
+        
+    </div>
+
+   </body>
+  
+    <!-- bootstrap-js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- my-js -->
+    <script src="./main.js"></script>
+  </body>
+</html>

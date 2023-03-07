@@ -19,11 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// api/index
+// http://127.0.0.1:8000/api/index
 Route::get('index',[UserController::class, 'userList']);
-// api/register
+// http://127.0.0.1:8000/api/register
 Route::post('register',[UserController::class, 'createUser']);
-// api/updateUser/{id_user}
+// http://127.0.0.1:8000/api/updateUser/{id_user}
 Route::post('updateUser/{id}',[UserController::class, 'updateUser']);
-// api/deleteUser/{id_user}
+// http://127.0.0.1:8000/api/deleteUser/{id_user}
 Route::delete('deleteUser/{id}',[UserController::class, 'deleteUser']);
+

@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         try {
             $request->validate([
-                'name' => 'required|string|max:100',
+                'name' => 'required|string|max:100|min:5',
                 'lastname' => 'required|string|max:100',
                 'cc' => 'required|integer',
                 'email' => 'required|email|max:150',
